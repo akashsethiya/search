@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 		user = ''
 		web_search_url = "https://api.datamarket.azure.com/Bing/Search/v1/Web?$format=json&Query="
 		searchquery = URI.encode_www_form_component('\'' + searchqu + '\'')
-		limit = "&$top=10"
+		limit = "&$top=20"
 		full_address = web_search_url + searchquery + limit
 		uri = URI(full_address)
 		req = Net::HTTP::Get.new(uri.request_uri)
@@ -49,7 +49,6 @@ class ApplicationController < ActionController::Base
   	end
 
   	def configtwitter()
-
   		consumer_key = "IAU0m2vQ5FkwvcfAQXlLw"
   		consumer_secret = "N9qZfmlHRB2NALKEUY7ZgNfu0JvL7rzmBs3oqEDE"
   		access_token = "1853474826-yjAh5X2ArUGGaROffvJjWWIorxStgyGBAYC4d6n"
